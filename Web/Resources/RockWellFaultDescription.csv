@@ -1,0 +1,48 @@
+F000,No Fault,-,No Fault Present,-
+F002,Auxiliary Input,Auto-Reset/Run,External trip (Auxiliary) input,Check Remote Wiring. Verify Communications programming
+F003,Power Loss,Non-Resettable,Single Phase Operation detected with excessive load,Monitor AC line for low voltage. Check fuses. Reduce Load
+F004,Under Voltage,Auto-Reset/Run,DC bus voltage fell below the minimum value,Monitor the incoming AC line for low voltage or inturruption
+F005,Over Voltage,Auto-Reset/Run,DC bus voltage exceeded maximum value,Monitor the AC line for high voltage. If cause is motor regeneration extend the decel time.
+F006,Motor Stalled,Auto-Reset/Run,Drive is unable to accelerate or decelerate motor,Increase P041/A442/A444/A446 or reduce load so its under parameter A484/A485. Check for overhauling load.
+F007,Motor Overload,Auto-Reset/Run,Internal electronic overload trip,An Excessive motorload exists. Verify A540 (Boost Select) setting. Reduce load below parameter P033
+F008,Heatsink Over Temp,Auto-Reset/Run,Heatsing/Power Module temperature is high,Check for blocked or dirty heat sink fins. Check Fan
+F009,CC Over Temp,Auto-Reset/Run,Control module temperature exceeds a predfined value,Check product ambient temperature/ dirt or debris/ fan/ airflow obstruction
+F012,HW OverCurrent,Non-Resettable,The drive output current has exceeded the limit.,Check programming/excessive load/imporoper A530 setting/DC brake volts set to high
+F013,Ground Fault,Auto-Reset/Run,A current path to earth ground is detected at a drive terminal,Check the motor and external wiring to the drive output terminals for a grounded condition.
+F015,Load Loss,Non-Resettable,The output torque is below value programmed in A490,Verify connections between motor and load. Verify level and time requirements.
+F021,Output Ph Loss,Auto-Reset/Run,Output Phase Loss. Configured with A557,Verify motor wiring. Verify motor
+F029,Analog In Loss,Auto-Reset/Run,An analog input is configured to fault on signal loss. ,Check broken/loose connections at inputs. Check t094 or t097
+F033,Auto Restart Tries,Non-Resettable,Drive unsuccessfully attemptd to reset a fault for max # tries,Correct the cause of the fault and manually clear
+F038,Phase U to Gnd,Non-Resettable,A phase to ground fault detected between drive and motor,Check wiring between the drive and motor. Check motor for grounded phase. Replace drive
+F039,Phase V to Gnd,Non-Resettable,A phase to ground fault detected between drive and motor,Check wiring between the drive and motor. Check motor for grounded phase. Replace drive
+F040,Phase W to Gnd,Non-Resettable,A phase to ground fault detected between drive and motor,Check wiring between the drive and motor. Check motor for grounded phase. Replace drive
+F041,Phase UV Short,Non-Resettable,Excessive current detected between two output terminals,Check motor and drive output terminal wiring. Replace drive if fault doesn't clear
+F042,Phase UW Short,Non-Resettable,Excessive current detected between two output terminals,Check motor and drive output terminal wiring. Replace drive if fault doesn't clear
+F043,Phase VW Short,Non-Resettable,Excessive current detected between two output terminals,Check motor and drive output terminal wiring. Replace drive if fault doesn't clear
+F048,Params Defaulted,Auto-Reset/Run,The drive was commanded to write default values to EEPROM,Clear the fault or cycle power. Program the drive paramaters as needed
+F059,Safety Open,Auto-Reset/Run,Both of the safety inputs (1/2) are not enabled,Configure with t105. Check safety input signals. If not using safety: verify and tighten jumper for I/O terminals
+F063,SW Over Current,Auto-Reset/Run,Programmed A486/A488 exceeded time A487/A489,Verify connections between motor and load. Verify level and time requirements
+F064,Drive Overload,Non-Resettable,Drive overload rating has been exceeded,Reduce load or extend Accel Time
+F070,Power Unit,Non-Resettable,Failure has been detected in the drive power section,Check ambient temperature has not been exceeded. Cycle power. Replace Drive if cannot clear
+F071,DSI Net Loss,Non-Resettable,Control over the Modbus or DSI Communication is interrupted,Cycle Power. Check communications cabling. Check Modbus or DSI setting and status
+F072,Opt Net Loss,Non-Resettable,Control over the network option card's network is interrupted,Cycle Power. Check communications cabling. Check network adapter setting. Check external network setting
+F073,EN Net Loss,Non-Resettable,Control through the embedded EtherNet/IP adapter interrupted,Cycle power. Check communications cabling. Check EtherNet/IP setting. Check external network setting
+F080,Autotune Failure,Non-Resettable,The autotune function was either cancelled by user or failed,Restart Procedure
+F081,DSI Comm Loss,Non-Resettable,Communications between drive and DSI master is interrupted,Cycle Power. Check communications cabling. Check Modbus or DSI setting/status. Modify using C125. 
+F082,Opt Comm Loss,Non-Resettable,Communications between drive and network option card is interrupted.,Cycle power. Reinstall option card. Modify using C125. Replace wiring/port expander/option card/control module.
+F083,EN Comm Loss,Non-Resettable,Internal communications between drive and EtherNet/IP is intterupted,Cycle Power. Check EtherNet/IP Setting. Check drive's ethernet setting. Modify using C125
+F091,Encoder Loss,Non-Resettable,Requires differential encoder. One of the 2 encoder channels are missing,"Check Wiring. If P047/P049/P051 = 16 Positioning and A535 = 5 ""Quad Check"" Swap encoder channels. Replace Encoder"
+F094,Function Loss,Non-Resettable,Freeze-Fire input is inactive. Input to the programmed terminal is open,Close input to the terminal and cycle power
+F100,Paramter ChkSum,Non-Resettable,Drive parameter non-volatile storage is corrupted,Set P053 to 2
+F101,External Storrage,Non-Resettable,External non-volatile storage has failed,Set P053 to 2
+F105,C Connect Err,Non-Resettable,Control module was disconnected while drive was powered,Clear fault and verify all paramter settings. Do not remove or install the control module while power is applied
+F106,Incompat C-P ,Non-Resettable,The PowerFlex 525 module does not support .25 HP power rated power modules.,Change to a different power module. Change to a PowerFlex 523 control module
+F107,Replaced C-P,Non-Resettable,The control module couldn't recognize the power module. Hardware failure,Change to a different power module. Replace control module if changing power module doesn't work
+F109,Mismatch C-P,Non-Resettable,The control module was mounted to a different drive type power module,Set P053 to 3
+F110,Keypad Membrane,Non-Resettable,Keypad membrane failure/disconnected,Cycle Power. Replace control module if fault cannot be cleared
+F111,Safety Hardware,Non-Resettable,Safety input enable hardware malfunction. One of the safety inputs is not enabled.,Check safety input signals. If not using safety: verify and tighten jumper for I/O terminals. Replace control module
+F114,uC Failure,Non-Resettable,Microprocessor failure,Cycle Power. Replace control module if fault cannot be cleared
+F122,I/O Board Fail,Non-Resettable,Failure has been detected in the drive control and I/O Section,Cycle Power. Replace the drive or control module if the fault cannot be cleared. 
+F125,Flash update Req,Non-Resettable,The firmware in the drive is corrupt/mismatched/or incompatible with hardware,Perform a firmware flash update operation to attempt to load a valid set of firmware
+F126,NonRecoverableErr,Non-Resettable,A non-recoverable firmware or hardware error detected. Drive automatically reset,Clear fault or cycle power to the drive. Replace drive or control module if fault cannot be cleared
+F127,DSI FLASH Update Req,Non-Resettable,A critical problem with the firmware was detected and the drive is using backup firmware,Perform a firmware flash update operation using DSI communications to attempt to load a valid set of firmware
